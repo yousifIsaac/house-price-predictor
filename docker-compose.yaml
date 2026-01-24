@@ -1,0 +1,24 @@
+version: '3.2'
+services:
+  fastapi:
+    image: yousif204/fastapi:dev
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 8000:8000
+
+  streamlit:
+    image: yousif204/mlops-app:dev
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile
+
+    ports:
+      - 8501:8501
+
+    environment:
+      API_URL: http://fastapi:8000
+
+
