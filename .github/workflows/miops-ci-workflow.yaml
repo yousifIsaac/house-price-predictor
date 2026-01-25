@@ -55,7 +55,7 @@ jobs:
             --models-dir models \
             --mlflow-tracking-uri http://localhost:5555
 
-      - name: Set up MLflow Server
+      - name: Clean up MLflow Server
         run: |
           docker stop mlflow-server
           docker rm mlflow-server
