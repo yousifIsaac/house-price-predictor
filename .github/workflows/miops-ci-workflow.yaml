@@ -74,6 +74,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: yousif204/mlops-app:{{github.sha}}
+          tags: yousif204/mlops-app:${{github.sha}}
           context: "."
           file: "./Dockerfile"
